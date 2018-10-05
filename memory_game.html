@@ -1,26 +1,105 @@
 <html lang="pt">
    <head>
       <meta charset="utf-8" />
-      <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+      <script type="text/javascript" src="memory_game.controller.js"></script>
+      <style>
+      th, td {
+         padding: 5px;
+         padding-left: 130px;
+      }
+
+      img {
+            width:180px;
+            height: 220px;
+            padding: 5px;
+            border-radius: 18px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+         }
+      button {
+         width: 100%;
+         height: 100px;
+      }         
+      </style>
+      
+      
+
    </head>
-   <body ng-app="aloMundo" ng-cloak>
-      <md-toolbar class="md-warn">
-         <div class="md-toolbar-tools">
-            <h2 class="md-flex">Alô Mundo Angular Material</h2>
-         </div>
-      </md-toolbar>
-      <md-content flex layout-padding>
-         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-         <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </md-content>
+   <body style="background-color: whitesmoke;">
+      
+      <header style="background-color: orange; padding-top: 35px; padding-bottom: 55px; padding-left: 10px;">
+         <h1 style="text-align: center;">Memory Game</h1>
+      </header>
+
+
+      <table style="width: 100%; background-color: #fff3a7">
+         <tr>
+            <td>
+               <div>
+                  <div>
+                     <img src="card.jpg" id="0" onclick="turnCard(this)"></div>
+                  </div>
+            </td>
+            <td><div>
+                  <div>
+                     <img src="card.jpg" id="1" onclick="turnCard(this)"></div>
+                  </div></td>
+            <td><div>
+                  <div>
+                     <img src="card.jpg" id="2" onclick="turnCard(this)"></div>
+                  </div></td>
+         </tr>
+
+         <tr>
+            <td><div>
+                  <div>
+                     <img src="card.jpg" id="3" onclick="turnCard(this)"></div>
+                  </div></td>
+            <td><div>
+                  <div>
+                     <img src="card.jpg" id="4" onclick="turnCard(this)"></div>
+                  </div></td>
+            <td><div>
+                  <div>
+                     <img src="card.jpg" id="5"onclick="turnCard(this)"> </div>
+                  </div></td>   
+         </tr>
+
+         <tr>
+            <td><div>
+                  <div>
+                     <img src="card.jpg" id="6" onclick="turnCard(this)"></div>
+                  </div></td>
+            <td><div>
+                  <div>
+                     <img src="card.jpg" id="7" onclick="turnCard(this)"></div>
+                  </div></td>
+            <td><div>
+                  <div>
+                     <img src="card.jpg" id="8" onclick="turnCard(this)"></div>
+                  </div></td>   
+         </tr>
+
+         <tr>
+            <td><div>
+                  <div>
+                     <img src="card.jpg" id="9" onclick="turnCard(this)"></div>
+                  </div></td>
+            <td><div>
+                  <div>
+                     <img src="card.jpg" id="10" onclick="turnCard(this)"></div>
+                  </div></td>
+            <td><div>
+                  <div>
+                     <img src="card.jpg" id="11" onclick="turnCard(this)"></div>
+                  </div></td>
+         </tr>
+
+      </table>
+
+      <div style="text-align: center; padding-top: 35px;">
+         <button onclick="shuffleCards()"><h2>Embaralhar</h2></button>
+      </div>
+
    </body>
-   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
-   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
-   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
-   <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
-   <script type="text/javascript">    
-           angular.module('aloMundo', ['ngMaterial']);
-   </script>
-</html>
+
+   </html>
