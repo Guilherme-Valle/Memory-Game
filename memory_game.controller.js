@@ -156,10 +156,14 @@ function unturnAllCardsTurned (item){
 }
 
 /** 
- * Shuffle all the cards
+ * Shuffle all the cards, and turn all off.
 */
 function shuffleCards(){
 	memoryCards = shuffle(memoryCards);
+	for (var i=0; i < 12; i++){
+		var item = document.getElementById(i);
+		item.src = card;
+	}
 }
 
 
@@ -185,3 +189,6 @@ function shuffle(array){
 function sleep(ms){
 	return new Promise(resolve => setTimeout(resolve, ms));
 };
+
+/** The game start with shuffled cards */
+shuffleCards();
