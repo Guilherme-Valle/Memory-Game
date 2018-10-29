@@ -118,7 +118,6 @@ function turnCard(item){
 		is_blocked = false;
 
 	}
-	is_blocked = false;
 	count++;
 	}
 };
@@ -139,6 +138,7 @@ function hasAnotherCardWithSameIdTurned (item){
 	if (flag === 2){
 		idOfHtmlCards = [];
 		flag = 0;
+		is_blocked = false;
 		return true;
 	} else {
 		flag = 0;
