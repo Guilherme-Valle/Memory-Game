@@ -15,74 +15,74 @@ The algorithm:
 /** Variables */
 var dragon_1 = {
 	id: 0, 
-	src:'dragon.jpg',
+	src:'img/dragon.jpg',
 	turned: false,
 };
 
 var dragon_2 = {
 	id: 0, 
-	src:'dragon.jpg',
+	src:'img/dragon.jpg',
 	turned: false,
 };
 
 var mage_1 = {
 	id: 1, 
-	src:'mage.jpg',
+	src:'img/mage.jpg',
 	turned: false,
 };
 
 var mage_2 = {
 	id: 1, 
-	src:'mage.jpg',
+	src:'img/mage.jpg',
 	turned: false,
 };
 
 var pot_1 = {
 	id: 2, 
-	src: 'pot.jpg',
+	src: 'img/pot.jpg',
 	turned: false,
 };
 
 var pot_2 = {
 	id: 2, 
-	src: 'pot.jpg',
+	src: 'img/pot.jpg',
 	turned: false,
 };
 
 
 var warrior_1 = {
 	id:3 , 
-	src:'warrior.jpg',
+	src:'img/warrior.jpg',
 	turned: false,
 };
 
 var warrior_2 = {
 	id:3 , 
-	src:'warrior.jpg',
+	src:'img/warrior.jpg',
 	turned: false,
 };
 
 var yugi_1 = {
 	id: 4, 
-	src:'yugi.jpg',
+	src:'img/yugi.jpg',
 	turned: false,
 };
 
 var yugi_2 = {
 	id: 4, 
-	src:'yugi.jpg',
+	src:'img/yugi.jpg',
 	turned: false,
 };
 
 var zelda_1 = {
 	id: 5,
-	src:'zelda.jpg',
+	src:'img/zelda.jpg',
 	turned: false,
 };
 
 var zelda_2 = {
 	id: 5,
-	src:'zelda.jpg',
+	src:'img/zelda.jpg',
 	turned: false,
 };
 
@@ -93,25 +93,34 @@ var memoryCards = [dragon_1, dragon_2, zelda_1, zelda_2, yugi_1, yugi_2, mage_1,
 var count = 0;
 
 var idOfHtmlCards = [];
+/** Variable to block click on cards, when two wrong cards are visible. */
+var is_blocked = false;
 
 /**
 * Function called when some card are clicked.  
  */
 function turnCard(item){
+	if (!is_blocked){
 	item.src = memoryCards[item.id].src;
 	memoryCards[item.id].turned = true;
 	/** Verify if its a pair click; if isnt a pair click, may be two same cards turned */
 	if (count % 2 !== 0){
+		is_blocked = true;
 		var check = hasAnotherCardWithSameIdTurned(item);
 		if (!check){
 			sleep(2000).then(function(){
 				unturnAllCardsTurned(item);
+				is_blocked = false;
 			})
 		}
 	} else {
 		idOfHtmlCards.push(item.id);
+		is_blocked = false;
+
 	}
+	is_blocked = false;
 	count++;
+	}
 };
 
 /**
